@@ -1,0 +1,22 @@
+{
+ "name": "websiteown",
+ "description": "website",
+ "main": "index.js",
+ "authors": [
+   "DmitriyRelkin <dmitrij.relkin@gmail.com>"
+ ],
+ "license": "ISC",
+ "homepage": "",
+ "ignore": [
+   "**/.*",
+   "node_modules",
+   "bower_components",
+   "test",
+   "tests"
+ ],
+ "devDependencies": {
+   "jquery": "^3.1.1",
+   "bootstrap": "^3.3.7",
+   "bootstrap-sass": "^3.3.7"
+ }
+}

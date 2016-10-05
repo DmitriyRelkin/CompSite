@@ -1,0 +1,28 @@
+@import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+/* Small devices (tablets, 768px and up) */
+@media (max-width: $screen-sm-min) {
+	.header {
+		position: fixed !important;
+		top: .5%;
+		.navigation-list {
+			text-align: center !important;
+		}
+	}
+	.content {
+		padding-top: 12% !important;
+		.header-content {
+			h2 {
+				font-size: 20px !important;
+			}
+		}
+		.social-columns {
+			text-align: center;
+		}
+	}
+}
+	/* Medium devices (desktops, 992px and up) */
+@media (max-width: $screen-md-min) {
+	.content {
+		padding-top: 33%;
+	}
+}

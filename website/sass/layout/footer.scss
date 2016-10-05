@@ -1,0 +1,69 @@
+.footer {
+  position: relative;
+  .wave-footer {
+    width: 100% !important;
+    position: absolute;
+    bottom: 100%;
+  }
+  color: #eee;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, #001623 , #006ca5 );
+  background-size: cover;
+  .blue-ground {
+    background-color: transparent;
+    border-color: #eee;
+    border-radius: 10px;
+  }
+  .send-button {
+    margin-top: 5px;
+  }
+  .margin-footer {
+    margin-bottom: 40px;
+    margin-top: 45px;
+  }
+  .margin-form {
+    margin-top: 15px;
+    resize: vertical !important;
+    border: 1px solid #003c5c;
+    background: #004b73;
+  }
+  td {
+    padding-right: 10px;
+  }
+  form#contact-form input[type="text"] {
+    width: 100%;
+    min-height: 43px;
+    padding-left: 2px;
+    font-size: 12px;
+    border: 1px solid #003c5c;
+    background: #004b73;
+  }
+  form#contact-form input[type="email"] {
+    width: 100%;
+    min-height: 43px;
+    padding-left: 2px;
+    font-size: 12px;
+    border: 1px solid #003c5c;
+    background: #004b73;
+  }
+  a {
+    border-bottom: 1px dotted;
+    color: #eee!important;
+    &:hover {
+      text-decoration: none;
+      color: #eee;
+    }
+  }
+}
+.validation {
+  color: red;
+  margin-bottom: 20px;
+}
+.error {
+  display: none!important;
+  color: red!important;
+}
+.invalid {
+  display: block!important;
+}
