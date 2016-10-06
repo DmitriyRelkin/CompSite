@@ -9,8 +9,6 @@ var rename     = require("gulp-rename");
 var uglifycss = require('gulp-uglifycss');
 var concat = require('gulp-concat');
 
-
-
 gulp.task('sass', function () {
   return gulp.src('./website/sass/main.scss')
     .pipe(sass().on('error', sass.logError))
@@ -21,11 +19,17 @@ gulp.task('sass:watch', function () {
 	gulp.watch("website/sass/**", ['sass']);
 });
 
+gulp.task('concat-js', function() {
+  return gulp.src('website/js/*.js')
+    .pipe(concat('bundle.js'))
+    .pipe(gulp.dest('website/js/build/'));
+});
+
 gulp.task('compress:js', function(){
-  return gulp.src('website/js/bundle.js')
+  return gulp.src('website/js/build/bundle.js')
     .pipe(uglify())
     .pipe(rename({ suffix: '.min', basename: "bundle" }))
-    .pipe(gulp.dest('website/js/'));
+    .pipe(gulp.dest('website/js/build/'));
 })
 
 gulp.task('compress:css', function (){
@@ -35,19 +39,11 @@ gulp.task('compress:css', function (){
     .pipe(gulp.dest('website/css/'));
 })
 
-gulp.task('concat-js', function() {
-  return gulp.src('website/js/**/*.js')
-    .pipe(concat('bundle.js'))
-    .pipe(gulp.dest('website/js/'));
-});
-
 gulp.task('watch', function () {
-  gulp.watch("website/js/**/*.js", ['concat-js']);
-  gulp.watch("website/js/**/*.js", ['compress:js']);
-});
-
-gulp.task('watch-css', function () {
+  gulp.watch("website/js/*.js", ['concat-js']);
+  gulp.watch("website/js/*.js", ['compress:js']);
   gulp.watch("website/css/main.css", ['compress:css']);
 });
 
-gulp.task('default', ['watch', 'watch-css', "sass:watch"]);
+
+gulp.task('default', ['watch', "sass:watch"]);
